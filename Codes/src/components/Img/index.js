@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { Wrapper } from './styles'
 
 export default function Img() {
   const [image, setImage] = useState({ preview: '', raw: '' })
 
   async function handleChange(e) {
-    console.log(e.target.files[0])
     setImage({
       preview: URL.createObjectURL(e.target.files[0]),
       raw: e.target.files[0]
@@ -20,7 +20,7 @@ export default function Img() {
   }
 
   return (
-    <div>
+    <Wrapper>
       <label htmlFor="upload-button">
         {
           image.preview ? <img src={image.preview} width="300" height="300" /> : (
@@ -37,7 +37,7 @@ export default function Img() {
       <input type="file" id="upload-button" onChange={e => handleChange(e)} />
       <br />
       <button onClick={handleUpload}>Upload</button>
-    </div>
+    </Wrapper>
   )
 }
 
