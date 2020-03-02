@@ -34,16 +34,14 @@ export default function Forms() {
   }
 
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-      <Wrapper>
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <Input type="" name="name" />
-          <Input type="email" name="email" />
-          <Input type="password" name="password" />
-          <button type="submit">Enviar</button>
-        </Form>
-      </Wrapper>
-    </div>
+    <Wrapper>
+      <h1>Formulario</h1>
+      <Form ref={formRef} onSubmit={handleSubmit}>
+        <Input type="text" name="name" placeholder="Digite seu nome" />
+        <Input type="email" name="email" placeholder="Digite seu email" />
+        <Input type="password" name="password" placeholder="Digite uma senha secreta" />
+        <button type="submit">Enviar</button>
+      </Form>
+    </Wrapper>
   );
 }
